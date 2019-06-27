@@ -10,6 +10,12 @@ datagroup: stuloco_default_datagroup {
 
 persist_with: stuloco_default_datagroup
 
-explore: points {}
+explore: points {
+  join: survey {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${survey.id} = ${points.device_id} ;;
+  }
+}
 
 explore: survey {}
