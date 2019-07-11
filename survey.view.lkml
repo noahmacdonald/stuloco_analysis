@@ -37,6 +37,13 @@ view: survey {
     sql: ${TABLE}.gpa ;;
   }
 
+  dimension: gpa_tier {
+    type: tier
+    tiers: [0, 2, 2.5, 3, 3.5, 4, 5]
+    style: interval # the default value, could be excluded
+    sql: ${gpa} ;;
+  }
+
   dimension: identify {
     type: number
     sql: ${TABLE}.identify ;;
