@@ -22,7 +22,7 @@ view: survey {
     sql: ${TABLE}.car ;;
     html:
        {% if value == 'Yes' %}
-         <p style="color: green;">{{ rendered_value }}</p>
+         <p style="color: green;">{{ 🚗 }}</p>
        {% else %}
          <p style="color: red;">{{ rendered_value }}</p>
        {% endif %};;
