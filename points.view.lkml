@@ -22,9 +22,17 @@ view: points {
     sql: ${TABLE}.longitude ;;
   }
 
-  dimension: timestamp {
-    type: string
-    sql: ${TABLE}.timestamp ;;
+#   dimension: timestamp {
+#     type: string
+#     sql: ${TABLE}.timestamp ;;
+#   }
+#
+  dimension_group: timestamp {
+    type: time
+    timeframes: [second] # valid timeframes described below
+    sql: ${TABLE}.timestamp ;;  # often this is a single database column
+    datatype: timestamp
+    convert_tz: yes
   }
 
   measure: count {
