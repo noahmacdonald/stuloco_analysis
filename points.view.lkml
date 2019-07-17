@@ -15,19 +15,17 @@ view: points {
   dimension: point_rounded {
     type: location
     sql_latitude: ${latitude_rounded} ;;
-    sql_longitude: ${longitude_rounded} ;;
+    sql_longitude: ${longitude_rounded};;
   }
 
   dimension: latitude_rounded {
-    type: number
-    value_format: "0.#####"
-    sql: ${TABLE}.latitude ;;
+    type: string
+    sql: SUBSTR(${TABLE}.latitude, 0, 5) ;;
   }
 
   dimension: longitude_rounded {
-    type: number
-    value_format: "0.#####"
-    sql: ${TABLE}.longitude ;;
+    type: string
+    sql: SUBSTR(${TABLE}.longitude, 0, 5) ;;
   }
 
   dimension: latitude {
