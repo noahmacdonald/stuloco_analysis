@@ -12,6 +12,24 @@ view: points {
     sql_longitude: ${TABLE}.longitude ;;
   }
 
+  dimension: point_rounded {
+    type: location
+    sql_latitude: ${latitude_rounded} ;;
+    sql_longitude: ${longitude_rounded} ;;
+  }
+
+  dimension: latitude_rounded {
+    type: number
+    value_format: "0.#####"
+    sql: ${TABLE}.latitude ;;
+  }
+
+  dimension: longitude_rounded {
+    type: number
+    value_format: "0.#####"
+    sql: ${TABLE}.longitude ;;
+  }
+
   dimension: latitude {
     type: number
     sql: ${TABLE}.latitude ;;

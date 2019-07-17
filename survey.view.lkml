@@ -22,7 +22,7 @@ view: survey {
     sql: ${TABLE}.car ;;
     html:
        {% if value == 'Yes' %}
-         <p style="color: green;">{{ 🚗 }}</p>
+         <p style="color: green;">{{ rendered_value }}</p>
        {% else %}
          <p style="color: red;">{{ rendered_value }}</p>
        {% endif %};;
@@ -36,6 +36,14 @@ view: survey {
   dimension: gender {
     type: string
     sql: ${TABLE}.gender ;;
+    html:
+      {% if value == 'Female' %}
+        <p style="color: pink;">{{ rendered_value }}</p>
+      {% elsif value == 'Male' %}
+        <p style="color: blue;">{{ rendered_value }}</p>
+      {% else  %}
+        <p style="color: grey;">{{ rendered_value }}</p>
+      {% endif %};;
   }
 
   dimension: gpa {
