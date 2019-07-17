@@ -20,6 +20,12 @@ view: survey {
   dimension: car {
     type: string
     sql: ${TABLE}.car ;;
+    html:
+       {% if value == 'Yes' %}
+         <p style="color: green;">{{ rendered_value }}</p>
+       {% else %}
+         <p style="color: red;">{{ rendered_value }}</p>
+       {% endif %};;
   }
 
   dimension: college {
