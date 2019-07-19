@@ -12,20 +12,41 @@ view: points {
     sql_longitude: ${TABLE}.longitude ;;
   }
 
-  dimension: point_rounded {
+  dimension: p3_key {
+    type: string
+    sql: CONCAT(${latitude_rounded3}, ${longitude_rounded3}) ;;
+  }
+
+  dimension: point_rounded3 {
     type: location
-    sql_latitude: ${latitude_rounded} ;;
-    sql_longitude: ${longitude_rounded};;
+    sql_latitude: ${latitude_rounded3} ;;
+    sql_longitude: ${longitude_rounded3};;
   }
 
-  dimension: latitude_rounded {
-    type: string
-    sql: SUBSTR(${TABLE}.latitude, 0, 5) ;;
+  dimension: point_rounded4 {
+    type: location
+    sql_latitude: ${latitude_rounded4} ;;
+    sql_longitude: ${longitude_rounded4};;
   }
 
-  dimension: longitude_rounded {
-    type: string
-    sql: SUBSTR(${TABLE}.longitude, 0, 5) ;;
+  dimension: latitude_rounded3 {
+    type: number
+    sql: ROUND(${TABLE}.latitude, 3) ;;
+  }
+
+  dimension: longitude_rounded3 {
+    type: number
+    sql: ROUND(${TABLE}.longitude, 3) ;;
+  }
+
+  dimension: latitude_rounded4 {
+    type: number
+    sql: ROUND(${TABLE}.latitude, 4) ;;
+  }
+
+  dimension: longitude_rounded4 {
+    type: number
+    sql: ROUND(${TABLE}.longitude, 4) ;;
   }
 
   dimension: latitude {
@@ -45,9 +66,8 @@ view: points {
 #
   dimension_group: timestamp {
     type: time
-    timeframes: [second, hour] # valid timeframes described below
+    timeframes: [second, hour, hour_of_day] # valid timeframes described below
     sql: ${TABLE}.timestamp ;;  # often this is a single database column
-    datatype: timestamp
     convert_tz: yes
   }
 

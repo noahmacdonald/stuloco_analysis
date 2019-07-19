@@ -16,6 +16,11 @@ explore: points {
     relationship: many_to_one
     sql_on: ${survey.id} = ${points.device_id} ;;
   }
+  join: labels {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${labels.p3_key} = ${points.p3_key} ;;
+  }
 }
 
 explore: survey {}
