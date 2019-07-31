@@ -38,4 +38,5 @@ view: labels {
     type: count
     drill_fields: [id]
   }
+
 }

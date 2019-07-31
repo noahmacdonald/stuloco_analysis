@@ -69,8 +69,9 @@ view: points {
   dimension_group: timestamp {
     type: time
     timeframes: [second, hour, hour_of_day, time] # valid timeframes described below
-    sql: ${TABLE}.timestamp ;;  # often this is a single database column
+    sql: CAST(${TABLE}.timestamp AS DATETIME) ;;  # often this is a single database column
     convert_tz: yes
+    datatype: datetime
   }
 
   measure: count {
