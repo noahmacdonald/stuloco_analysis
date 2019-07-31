@@ -14,6 +14,7 @@ view: points {
 
   dimension: p3_key {
     type: string
+    hidden:  yes
     sql: CONCAT(${latitude_rounded3}, ${longitude_rounded3}) ;;
   }
 
@@ -31,39 +32,40 @@ view: points {
 
   dimension: latitude_rounded3 {
     type: number
+    hidden:  yes
     sql: ROUND(${TABLE}.latitude, 3) ;;
   }
 
   dimension: longitude_rounded3 {
     type: number
+    hidden:  yes
     sql: ROUND(${TABLE}.longitude, 3) ;;
   }
 
   dimension: latitude_rounded4 {
     type: number
+    hidden:  yes
     sql: ROUND(${TABLE}.latitude, 4) ;;
   }
 
   dimension: longitude_rounded4 {
     type: number
+    hidden:  yes
     sql: ROUND(${TABLE}.longitude, 4) ;;
   }
 
   dimension: latitude {
     type: number
+    hidden:  yes
     sql: ${TABLE}.latitude ;;
   }
 
   dimension: longitude {
     type: number
+    hidden:  yes
     sql: ${TABLE}.longitude ;;
   }
 
-#   dimension: timestamp {
-#     type: string
-#     sql: ${TABLE}.timestamp ;;
-#   }
-#
   dimension_group: timestamp {
     type: time
     timeframes: [second, hour, hour_of_day] # valid timeframes described below
