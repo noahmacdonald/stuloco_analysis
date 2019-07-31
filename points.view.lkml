@@ -68,7 +68,7 @@ view: points {
 
   dimension_group: timestamp {
     type: time
-    timeframes: [second, hour, hour_of_day] # valid timeframes described below
+    timeframes: [second, hour, hour_of_day, time] # valid timeframes described below
     sql: ${TABLE}.timestamp ;;  # often this is a single database column
     convert_tz: yes
   }
