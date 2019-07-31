@@ -17,13 +17,20 @@ view: labels {
     sql: ${TABLE}.label ;;
   }
 
+  dimension: activity {
+    type: string
+    sql: ${TABLE}.activity ;;
+  }
+
   dimension: lat {
     type: number
+    hidden:  yes
     sql: ${TABLE}.lat ;;
   }
 
   dimension: long {
     type: number
+    hidden:  yes
     sql: ${TABLE}.`long` ;;
   }
 
