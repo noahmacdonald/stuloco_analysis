@@ -14,7 +14,7 @@ view: points {
 
   dimension: p3_key {
     type: string
-    hidden:  yes
+#     hidden:  yes
     sql: CONCAT(${latitude_rounded3}, ${longitude_rounded3}) ;;
   }
 
