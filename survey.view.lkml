@@ -10,11 +10,13 @@ view: survey {
   dimension: aspart {
     type: number
     sql: ${TABLE}.aspart ;;
+    drill_fields: [id]
   }
 
   dimension: beingpart {
     type: number
     sql: ${TABLE}.beingpart ;;
+    drill_fields: [id]
   }
 
   dimension: car {
@@ -61,6 +63,7 @@ view: survey {
   dimension: identify {
     type: number
     sql: ${TABLE}.identify ;;
+    drill_fields: [id]
   }
 
   dimension: living {
