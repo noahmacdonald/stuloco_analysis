@@ -7,13 +7,13 @@ view: survey {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: aspart {
+  dimension: ReportedIdentification {
     type: number
     sql: ${TABLE}.aspart ;;
     drill_fields: [id]
   }
 
-  dimension: beingpart {
+  dimension: IdentificationImportance {
     type: number
     sql: ${TABLE}.beingpart ;;
     drill_fields: [id]

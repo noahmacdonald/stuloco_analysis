@@ -24,6 +24,12 @@ view: points {
     sql_longitude: ${longitude_rounded3};;
   }
 
+  dimension: center_campus {
+    type: location
+    sql_latitude: 35.300 ;;
+    sql_longitude: -120.659;;
+  }
+
   dimension: point_rounded4 {
     type: location
     sql_latitude: ${latitude_rounded4} ;;
@@ -64,6 +70,13 @@ view: points {
     type: number
     hidden:  yes
     sql: ${TABLE}.longitude ;;
+  }
+
+  dimension: distance_to_uu {
+    type: distance
+    start_location_field: point_rounded3
+    end_location_field: center_campus
+    units: miles
   }
 
   dimension_group: timestamp {
